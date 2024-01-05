@@ -11,7 +11,7 @@ function startGame() {
       let randomNum = Math.floor(Math.random() * (max - min + 1));
 
       function two() {
-        let a = +prompt("Введите число");
+        let a = prompt("Введите число");
 
         function three() {
           if (a > randomNum) {
@@ -31,7 +31,7 @@ function startGame() {
               alert("До свидания");
             }
           }
-          if (a === randomNum) {
+          if (a == randomNum) {
             a = confirm("Вы угадали! Хотите повторить?");
             if (a) {
               one(1, 100);
