@@ -15,7 +15,7 @@ function startGame() {
 
         function three() {
           if (a > randomNum) {
-            a = +prompt("Ваше число больше загаданного. Введите другое число");
+            a = prompt("Ваше число больше загаданного. Введите другое число");
 
             if (a) {
               three();
@@ -24,7 +24,7 @@ function startGame() {
             }
           }
           if (a < randomNum) {
-            a = +prompt("Ваше число меньше загаданного. Введите другое число");
+            a = prompt("Ваше число меньше загаданного. Введите другое число");
             if (a) {
               three();
             } else {
