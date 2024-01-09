@@ -25,7 +25,7 @@ function startGame(min, max) {
             );
             guessNumber();
           }
-          if (inputNumber === randomNum) {
+          if (inputNumber == randomNum) {
             inputNumber = alert("Поздравляю, Вы угадали!!! Игра окончена");
           }
         } else {
