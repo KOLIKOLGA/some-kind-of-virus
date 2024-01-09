@@ -13,6 +13,7 @@ function startGame(min, max) {
 
       if (inputNumber || inputNumber === "") {
         if (isNumber(inputNumber)) {
+          inputNumber = Number(inputNumber);
           if (inputNumber > randomNum) {
             inputNumber = alert(
               "Ваше число больше загаданного. Введите другое число"
