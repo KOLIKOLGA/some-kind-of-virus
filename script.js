@@ -11,7 +11,7 @@ function startGame(min, max) {
     function guessNumber() {
       let inputNumber = prompt("Введите число");
 
-      if (inputNumber) {
+      if (inputNumber || inputNumber === "") {
         if (isNumber(inputNumber)) {
           if (inputNumber > randomNum) {
             inputNumber = alert(
@@ -25,8 +25,8 @@ function startGame(min, max) {
             );
             guessNumber();
           }
-          if (inputNumber == randomNum) {
-            inputNumber = alert("Поздравляю, Вы угадали!!!");
+          if (inputNumber === randomNum) {
+            inputNumber = alert("Поздравляю, Вы угадали!!! Игра окончена");
           }
         } else {
           guessNumber();
