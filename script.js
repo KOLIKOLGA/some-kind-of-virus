@@ -10,7 +10,6 @@ function startGame(min, max) {
   if (suggestPlay) {
     function guessNumber() {
       let inputNumber = prompt("Введите число");
-
       if (inputNumber || inputNumber === "") {
         if (isNumber(inputNumber)) {
           inputNumber = Number(inputNumber);
