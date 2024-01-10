@@ -4,10 +4,10 @@ const isNumber = function (num) {
   return !isNaN(parseFloat(num) && isFinite(num));
 };
 
-function startGame(min, max) {
-  let randomNum = Math.floor(Math.random() * (max - min + 1));
-  let suggestPlay = confirm("Угадай число от 1 до 100");
-  if (suggestPlay) {
+let suggestPlay = confirm("Угадай число от 1 до 100");
+if (suggestPlay) {
+  function startGame(min, max) {
+    let randomNum = Math.floor(Math.random() * (max - min + 1));
     function guessNumber() {
       let inputNumber = prompt("Введите число");
       if (inputNumber || inputNumber === "") {
@@ -26,7 +26,14 @@ function startGame(min, max) {
             guessNumber();
           }
           if (inputNumber == randomNum) {
-            inputNumber = alert("Поздравляю, Вы угадали!!! Игра окончена");
+            inputNumber = confirm(
+              "Поздравляю, Вы угадали!!!\n Игра окончена. \n Хотите повторить игру?"
+            );
+            if (!inputNumber) {
+              alert("Игра окончена");
+            } else {
+              startGame(1, 100);
+            }
           }
         } else {
           guessNumber();
@@ -36,8 +43,8 @@ function startGame(min, max) {
       }
     }
     guessNumber();
-  } else {
-    alert("Игра окончена");
   }
+  startGame(1, 100);
+} else {
+  alert("Игра окончена");
 }
-startGame(1, 100);
