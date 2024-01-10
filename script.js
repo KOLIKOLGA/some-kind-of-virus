@@ -11,7 +11,7 @@ function playGuessNumber() {
     function startGame(min, max) {
       let randomNum = Math.floor(Math.random() * (max - min + 1));
       let count = 10;
-      // if (count > 0) {
+
       function guessNumber() {
         let inputNumber = prompt("Введите число");
         if (inputNumber || inputNumber === "") {
