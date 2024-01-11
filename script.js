@@ -15,10 +15,10 @@ function playGuessNumber() {
       function guessNumber() {
         let inputNumber = prompt("Введите число");
         if (inputNumber || inputNumber === "") {
-          if (count > 0) {
-            count--;
-            if (isNumber(inputNumber)) {
-              inputNumber = Number(inputNumber);
+          if (isNumber(inputNumber)) {
+            inputNumber = Number(inputNumber);
+            if (count > 1) {
+              count--;
               if (inputNumber > randomNum) {
                 inputNumber = alert(
                   `Ваше число больше загаданного. У Вас осталось ${count} попыток.  Введите другое число `
@@ -42,19 +42,19 @@ function playGuessNumber() {
                 }
               }
             } else {
-              guessNumber();
+              count = confirm("Попытки закончились.Хотите повторить игру?");
+              if (!count) {
+                count = alert("Игра окончена");
+              } else {
+                startGame(1, 100);
+              }
             }
           } else {
-            count = confirm("Попытки закончились.Хотите повторить игру?");
-            if (!count) {
-              count = alert("Игра окончена");
-            } else {
-              startGame(1, 100);
-            }
+            guessNumber();
           }
         } else {
           if (!inputNumber) {
-            inputNumber = alert("Игра окончена");
+            inputNumber = alert("Игра окончена? Серьёзно?");
           } else {
             startGame(1, 100);
           }
