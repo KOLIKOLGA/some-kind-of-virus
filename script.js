@@ -33,7 +33,9 @@ function playGuessNumber() {
               }
               if (inputNumber == randomNum) {
                 inputNumber = confirm(
-                  "Поздравляю, Вы угадали!!!\n Игра окончена. \n Хотите повторить игру?"
+                  `
+                  Поздравляю, Вы угадали!!!\n справились за ${10 - count} попыток \n Игра окончена. \n Хотите повторить игру?
+                  `
                 );
                 if (!inputNumber) {
                   alert("Игра окончена");
